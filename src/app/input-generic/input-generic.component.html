@@ -1,0 +1,7 @@
+<input matInput
+       type="{{inputType}}"
+       name="{{inputName}}"
+       [(ngModel)]="model"
+       #ngForm="ngModel"
+       (ngModelChange)="modelChange.emit($event)"
+>

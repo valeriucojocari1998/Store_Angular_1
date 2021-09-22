@@ -12,9 +12,7 @@ export class ShippingComponent implements OnInit {
   constructor(
     private cartService: CartService
   ) { }
-  shippingCosts: Observable<{type:string, price: number}> = this.cartService.getShippingPrices();
   ngOnInit(): void {
-    console.log(this.shippingCosts)
   }
 
 }
