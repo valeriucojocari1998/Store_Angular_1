@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { SharedModule } from './shared/shared.module';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    SharedModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
