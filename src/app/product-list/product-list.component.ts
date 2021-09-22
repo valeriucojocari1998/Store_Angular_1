@@ -7,12 +7,18 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
+  //attributes
   products = products;
-
+  //constructor
   constructor() { }
 
+  //methods
   ngOnInit(): void {
   }
-
+  share() {
+    window.alert('The product has been shared!');
+  }
+  onNotify() {
+    window.alert('You will be notified when the product goes to sale');
+  }
 }
