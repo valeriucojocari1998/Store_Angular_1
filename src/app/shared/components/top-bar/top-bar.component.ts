@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { CartProduct } from 'src/assets/products';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  tempCart: boolean = false;
+  items: CartProduct[] = []
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.items = this.cartService.getItems();
   }
-
+  tempoCart(x: boolean){
+    this.tempCart = x;
+    this.items = this.cartService.getItems();
+    console.log(this.items)
+  }
+  
 }

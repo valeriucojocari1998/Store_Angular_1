@@ -10,6 +10,7 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FormsModule
   ],
   exports: [
     TopBarComponent,
