@@ -2,23 +2,10 @@
   <button class="bar-button" routerLink="/home">Home</button>
   <button class="bar-button" routerLink="/products">Products</button>
   <button class="bar-button" routerLink="/about">About</button>
-  <button class="bar-button" routerLink="/cart" style="right: 0; position: absolute;" (mouseover)="tempoCart(true)" (mouseout)="tempoCart(false)">Checkout</button>
-  <div *ngIf="tempCart" style="position: absolute; right: 10px; top: 40px; width: 400px; height: 400px; background-color:blanchedalmond; border-radius: 5px; border-style: groove; overflow: scroll;" >
-    <div *ngFor="let item of items" style="width: 100%; height: 100px;">
-      <div style="display: inline-flex; align-items: center;">
-        <p style="margin-right: 10px; margin-left: 10px;">
-          {{ item.name }}
-        </p>
-        <p style="margin-right: 10px;">
-          <img src={{item.image}} width="auto" height="100px">
-        </p>
-        <p style="margin-right: 10px;">
-          Amount: {{ item.amount }}
-        </p>
-        <p>
-          Price: {{ item.price * item.amount | currency}}
-        </p>
-      </div>
-    </div>
-  </div>
+  <button class="nav-link  dropdown-toggle bar-button" id="dropDownMenu" routerLink="/cart" data-bs-toggle="dropdown">  Checkout  </button>
+		<ul class="dropdown-menu" aria-labelledby="dropDownMenu">
+		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+			<li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+			<li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+		</ul>
 </div>

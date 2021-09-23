@@ -9,7 +9,8 @@ import { CartProduct } from 'src/assets/products';
 })
 export class TopBarComponent implements OnInit {
 
-  tempCart: boolean = false;
+  checkout: boolean = false;
+  cart: boolean = false;
   items: CartProduct[] = []
   constructor(
     private cartService: CartService
@@ -18,10 +19,13 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
     this.items = this.cartService.getItems();
   }
-  tempoCart(x: boolean){
-    this.tempCart = x;
-    this.items = this.cartService.getItems();
-    console.log(this.items)
+
+  overCheckout(x: boolean){
+    this.checkout = x;
+    console.log(x)
   }
-  
+  overCart(x: boolean){
+    this.cart = x;
+    console.log(x);
+  }
 }
