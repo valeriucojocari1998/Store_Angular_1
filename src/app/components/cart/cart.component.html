@@ -3,6 +3,30 @@
   <div style="padding: 10px;">
     <h3>Cart</h3>
   </div>
-  
-  <app-bottom-bar></app-bottom-bar>
+  <div *ngFor="let product of items">
+    <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
+      <div >
+        <h3>
+          <a [title]="product.name + ' details'"
+          [routerLink]="['/products', product.id]">
+            {{ product.name }}
+          </a>
+        </h3>
+        <div *ngIf="product.image">
+          <img src={{product.image}} height="250px" width="200px">
+        </div>
+      </div>
+      <div style="margin-left: 60%;">
+        <p *ngIf="product.description">
+          Description: {{ product.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="items.length > 2" style="position: relative; margin-top: 80px;">
+    <app-bottom-bar></app-bottom-bar>
+  </div>
+  <div *ngIf="items.length < 2">
+    <app-bottom-bar></app-bottom-bar>
+  </div>
 </div>

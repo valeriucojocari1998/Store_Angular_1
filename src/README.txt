@@ -8,10 +8,10 @@
 8) Display products in shopping cart -- not done
   5.1) Increpement/Decrement -- not done
   5.2) Remove product from cart -- not done
-  5.3) On click product open product page -- not done
-  5.4) Display total amount -- not done
+  5.3) On click product open product page -- done
+  5.4) Display total amount -- done
   5.5) Checkout button -- done
-9) Checkout page, display all products from cart -- not done
+9) Checkout page, display all products from cart -- done
 10) Remove products from checkout -- not done
 11) Checkout form to order the products -- not done
 12) Keep products from the shopping cart in the local storage -- not done

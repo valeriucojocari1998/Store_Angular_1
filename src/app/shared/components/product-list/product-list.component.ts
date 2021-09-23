@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, products } from 'src/assets/products';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +15,9 @@ export class ProductListComponent implements OnInit {
   scrollUpDistance = 2;
   throttle = 150;
   //constructor
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   //methods
   ngOnInit(): void {
@@ -33,5 +36,8 @@ export class ProductListComponent implements OnInit {
     this.initialProducts.forEach(element => {
       this.products.push(element);
     });
+  }
+  addToCart(item: Product){
+    this.cartService.addToCart(item)
   }
 }

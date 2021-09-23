@@ -56,11 +56,17 @@
                 <p *ngIf="product.total">
                   Total: {{ product.total }}
                 </p>
-                <button (click)="share()">
-                  Share
-                </button>
-                <app-product-alerts [product]="product" (notify)="onNotify()">
-                </app-product-alerts>
+                <p>
+                  Price: {{ product.price }}
+                  <button (click)="addToCart(product)" style="margin-left: 20px; width: 100px;">Buy</button>
+                </p>
+                <div style="display: inline-flex; align-items: center;">
+                  <button (click)="share()" style="height: fit-content; margin-right: 45px;">
+                    Share
+                  </button>
+                  <app-product-alerts [product]="product" (notify)="onNotify()">
+                  </app-product-alerts>
+                </div>
               </div>
             </div>
           </div>
