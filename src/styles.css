@@ -3,4 +3,6 @@ body{
   height: 100%;
   width: 100%;
   margin: 0;
+  background-image:  linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("assets/images/background.jpg");
+  opacity: 1;
 }

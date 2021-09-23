@@ -8,6 +8,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductAlertsComponent } from './components/product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
+    BottomBarComponent,
 
   ],
   imports: [
@@ -27,7 +29,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     TopBarComponent,
     ProductAlertsComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    BottomBarComponent
   ]
 })
 export class SharedModule { }
