@@ -9,6 +9,7 @@ import { AboutModule } from './modules/about.module';
 import { FormsModule } from '@angular/forms';
 import { ProductsModule } from './modules/products.module';
 import { CartModule } from './modules/cart.module';
+import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [

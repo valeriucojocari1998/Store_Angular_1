@@ -2,10 +2,12 @@
   <button class="bar-button" routerLink="/home">Home</button>
   <button class="bar-button" routerLink="/products">Products</button>
   <button class="bar-button" routerLink="/about">About</button>
-  <button class="nav-link  dropdown-toggle bar-button" id="dropDownMenu" routerLink="/cart" data-bs-toggle="dropdown">  Checkout  </button>
-		<ul class="dropdown-menu" aria-labelledby="dropDownMenu">
-		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-			<li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-			<li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-		</ul>
+  <div class="dropdown" style="position: absolute; right: 10px;">
+    <button class="dropbtn bar-button" routerLink="/cart">Checkout</button>
+		<div class="dropdown-content dropdown-menu-right dropdown-menu">
+      <div>link1</div>
+      <div>link2</div>
+      <div>link3</div>
+    </div>
+  </div>
 </div>
