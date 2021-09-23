@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './modules/home.module';
 import { SharedModule } from './shared/shared.module';
-import { AboutModule } from './about/about.module';
+import { AboutModule } from './modules/about.module';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
