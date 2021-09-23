@@ -3,25 +3,57 @@ export interface Product {
   name: string;
   price: number;
   description: string;
+  image: string;
+  total: number;
 }
 
 export const products = [
   {
     id: 1,
-    name: 'Phone XL',
-    price: 799,
-    description: 'A large phone with one of the best screens'
+    name: 'iPhone 13 Pro Max',
+    price: 1299,
+    description: 'Very Very Good Phone',
+    image: 'assets/images/iphone13promax.png',
+    total: 100,
   },
   {
     id: 2,
-    name: 'Phone Mini',
-    price: 699,
-    description: 'A great phone with one of the best cameras'
+    name: 'iPhone 13 Pro',
+    price: 1099,
+    description: 'Very Good Phone',
+    image: 'assets/images/iphone13pro.png',
+    total: 100,
   },
   {
     id: 3,
-    name: 'Phone Standard',
-    price: 299,
-    description: ''
+    name: 'iPhone 13',
+    price: 899,
+    description: 'Good Phone',
+    image: 'assets/images/iphone13.png',
+    total: 100
+  },
+  {
+    id: 4,
+    name: 'Samsung Galaxy Z Flip3',
+    price: 1000,
+    description: 'Good flipping phone',
+    image: 'assets/images/galaxyzflip3.png',
+    total: 50,
+  },
+  {
+    id: 5,
+    name: 'Samsung Galaxy Z Fold3',
+    price: 1999,
+    description: 'Posh flipping phone',
+    image: 'assets/images/galaxyzfold3.png',
+    total: 50,
+  },
+  {
+    id: 6,
+    name: 'Motorola RAZR 2nd gen',
+    price: 999,
+    description: 'Old style flip smartphone',
+    image: 'assets/images/motorolarazr.png',
+    total: 100
   }
 ];
