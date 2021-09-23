@@ -1,6 +1,6 @@
 <h2 style="right: -45%; position: relative; width: 100%;">Products</h2>
 
-<div *ngFor="let product of products">
+<!--<div *ngFor="let product of products">
   <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
     <div >
       <h3>
@@ -27,4 +27,43 @@
       </app-product-alerts>
     </div>
   </div>
+</div>-->
+<div class="search-results"
+      infinite-scroll
+      [infiniteScrollDistance]="scrollDistance"
+      [infiniteScrollUpDistance]="scrollUpDistance"
+      [infiniteScrollThrottle]="throttle"
+      (scrolled)="onScrollDown()">
+      <div class="container">
+        <div class="row">
+          <div *ngFor="let product of products">
+            <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
+              <div >
+                <h3>
+                  <a [title]="product.name + ' details'"
+                  [routerLink]="['/products', product.id]">
+                    {{ product.name }}
+                  </a>
+                </h3>
+                <div *ngIf="product.image">
+                  <img src={{product.image}} height="250px" width="200px">
+                </div>
+              </div>
+              <div style="margin-left: 60%;">
+                <p *ngIf="product.description">
+                  Description: {{ product.description }}
+                </p>
+                <p *ngIf="product.total">
+                  Total: {{ product.total }}
+                </p>
+                <button (click)="share()">
+                  Share
+                </button>
+                <app-product-alerts [product]="product" (notify)="onNotify()">
+                </app-product-alerts>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

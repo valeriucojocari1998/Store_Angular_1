@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from 'src/assets/products';
+import { Product, products } from 'src/assets/products';
 
 @Component({
   selector: 'app-product-list',
@@ -8,17 +8,30 @@ import { products } from 'src/assets/products';
 })
 export class ProductListComponent implements OnInit {
   //attributes
-  products = products;
+  initialProducts = products;
+  products : Product[] = [];
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+  throttle = 150;
   //constructor
   constructor() { }
 
   //methods
   ngOnInit(): void {
+    this.initialProducts.forEach(element => {
+      this.products.push(element);
+    });
+    console.log(this.products);
   }
   share() {
     window.alert('The product has been shared!');
   }
   onNotify() {
     window.alert('You will be notified when the product goes to sale');
+  }
+  onScrollDown(){
+    this.initialProducts.forEach(element => {
+      this.products.push(element);
+    });
   }
 }
