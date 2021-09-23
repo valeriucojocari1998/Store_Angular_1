@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from './shared/components/cart/cart.component';
 import { HomeComponent } from './home/home.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ShippingComponent } from './shipping/shipping.component';
+import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
+import { ShippingComponent } from './shared/components/shipping/shipping.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
