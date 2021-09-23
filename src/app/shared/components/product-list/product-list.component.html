@@ -1,4 +1,4 @@
-<h2 style="right: -45%; position: relative; width: 100%;">Products</h2>
+<h2 style="right: -45%; width: 100%;">Products</h2>
 
 <!--<div *ngFor="let product of products">
   <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
@@ -57,7 +57,7 @@
                   Total: {{ product.total }}
                 </p>
                 <p>
-                  Price: {{ product.price }}
+                  Price: {{ product.price | currency }}
                   <button (click)="addToCart(product)" style="margin-left: 20px; width: 100px;">Buy</button>
                 </p>
                 <div style="display: inline-flex; align-items: center;">

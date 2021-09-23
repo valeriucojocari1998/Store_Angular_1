@@ -24,7 +24,6 @@ export class ProductListComponent implements OnInit {
     this.initialProducts.forEach(element => {
       this.products.push(element);
     });
-    console.log(this.products);
   }
   share() {
     window.alert('The product has been shared!');

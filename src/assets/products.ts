@@ -7,6 +7,16 @@ export interface Product {
   total: number;
 }
 
+export interface CartProduct {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+  total: number;
+  amount: number;
+}
+
 export const products = [
   {
     id: 1,
@@ -14,7 +24,7 @@ export const products = [
     price: 1299,
     description: 'Very Very Good Phone',
     image: 'assets/images/iphone13promax.png',
-    total: 100,
+    total: 10,
   },
   {
     id: 2,
