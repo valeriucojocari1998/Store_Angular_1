@@ -12,20 +12,22 @@ export class TopBarComponent implements OnInit {
   checkout: boolean = false;
   cart: boolean = false;
   items: CartProduct[] = []
+  totalPrice: number = 0;
   constructor(
     private cartService: CartService
   ) { }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    this.totalPrice = this.cartService.getPrice();
   }
+  add(val: CartProduct){
+    this.cartService.addItem(val);
+    this.totalPrice = this.cartService.getPrice();
 
-  overCheckout(x: boolean){
-    this.checkout = x;
-    console.log(x)
   }
-  overCart(x: boolean){
-    this.cart = x;
-    console.log(x);
+  remove(val: CartProduct){
+    this.cartService.removeItem(val, 1);
+    this.totalPrice = this.cartService.getPrice();
   }
 }

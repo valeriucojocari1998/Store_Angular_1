@@ -4,10 +4,23 @@
   <button class="bar-button" routerLink="/about">About</button>
   <div class="dropdown" style="position: absolute; right: 10px;">
     <button class="dropbtn bar-button" routerLink="/cart">Checkout</button>
-		<div class="dropdown-content dropdown-menu-right dropdown-menu">
-      <div>link1</div>
-      <div>link2</div>
-      <div>link3</div>
+		<div *ngIf="items.length > 0" class="dropdown-content dropdown-menu-right dropdown-menu">
+      <div *ngFor="let item of items" style="display: inline-flex; padding: 5px; width: 400px;">
+        <h6 style="white-space: nowrap; margin-right: 20px;">
+          {{ item.name }}
+        </h6>
+        <h6 style="margin-right: 20px; right:50%">
+          {{ item.price * item.amount| currency}}
+        </h6>
+        <div style="position: absolute; right: 5px; display: inline-flex;">
+          <button (click)="remove(item)">-</button>
+          <button disabled style="opacity: 100%;">{{ item.amount }}</button>
+          <button (click)="add(item)">+</button>
+        </div>
+      </div>
+      <div>
+        Total: {{ totalPrice | currency }}
+      </div>
     </div>
   </div>
 </div>

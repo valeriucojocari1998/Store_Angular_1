@@ -1,4 +1,6 @@
-<h2 style="right: -45%; width: 100%;">Products</h2>
+<br>
+<br>
+<br>
 
 <!--<div *ngFor="let product of products">
   <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
@@ -38,18 +40,20 @@
         <div class="row">
           <div *ngFor="let product of products">
             <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
-              <div >
+              <div style="width: 300px; margin-left: 5%; border-style: groove; background-color: ivory; text-align: center;" [routerLink]="['/products', product.id]">
                 <h3>
                   <a [title]="product.name + ' details'"
-                  [routerLink]="['/products', product.id]">
+                  >
                     {{ product.name }}
                   </a>
                 </h3>
                 <div *ngIf="product.image">
-                  <img src={{product.image}} height="250px" width="200px">
+                  <img src={{product.image}} height="200px" width="150px">
                 </div>
               </div>
-              <div style="margin-left: 60%;">
+              <div style="margin-left: 45%;">
+                <br>
+                <br>
                 <p *ngIf="product.description">
                   Description: {{ product.description }}
                 </p>
@@ -60,7 +64,7 @@
                   Price: {{ product.price | currency }}
                   <button (click)="addToCart(product)" style="margin-left: 20px; width: 100px;">Buy</button>
                 </p>
-                <div style="display: inline-flex; align-items: center;">
+                <div style="display: inline-flex;">
                   <button (click)="share()" style="height: fit-content; margin-right: 45px;">
                     Share
                   </button>

@@ -7,18 +7,19 @@
   </div>
   <div *ngFor="let product of items">
     <div class="container" style="margin-bottom: 20px; background-color: bisque; padding: 10px; height: 300px; display: flex;; width: 100%;">
-      <div >
-        <h3>
-          <a [title]="product.name + ' details'"
-          [routerLink]="['/products', product.id]">
+      <div style="border-style: groove; background-color: ivory; text-align: center; width: 300px;" [routerLink]="['/products', product.id]">
+        <h4>
+          <a [title]="product.name + ' details'">
             {{ product.name }}
           </a>
-        </h3>
+        </h4>
         <div *ngIf="product.image">
-          <img src={{product.image}} height="250px" width="200px">
+          <img src={{product.image}} height="200px" width="150px">
         </div>
       </div>
-      <div style="margin-left: 60%;">
+      <div style="margin-left: 55%;">
+        <br>
+        <br>
         <p *ngIf="product.description">
           Description: {{ product.description }}
         </p>
@@ -40,12 +41,14 @@
       </div>
     </div>
   </div>
-  <button *ngIf="items.length > 0" (click)="clearCart()">
-    Clear Cart
-  </button>
-  <h2 *ngIf="moneyNeeded != 0">
-    Total Price {{ moneyNeeded | currency }}
-  </h2>
+  <div style="text-align: center;">
+    <button *ngIf="items.length > 0" (click)="clearCart()" style="width: 50%;">
+      Clear Cart
+    </button>
+    <h2 *ngIf="moneyNeeded != 0">
+      Total Price {{ moneyNeeded | currency }}
+    </h2>
+  </div>
   <div *ngIf="items.length > 2" style="position: relative; margin-top: 80px;">
     <app-bottom-bar></app-bottom-bar>
   </div>
