@@ -6,46 +6,51 @@
   <div style="padding: 10px; text-align: center;">
     <h3>Checkout</h3>
   </div>
-  <table class="table table-striped" style="margin-left: 10%; margin-right: 10%; width: 80%; text-align: center;">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">
+  <div style="margin-left: 10%; margin-right: 10%; width: 80%; text-align: center;">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">
 
-        </th>
-        <th scope="col">
-          Name
-        </th>
-        <th scope="col">
-          Amount
-        </th>
-        <th scope="col">
-          Price
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items, let i=index">
-        <th scope="row">{{i+1}}</th>
-        <th>
-          {{ item.name }}
-        </th>
-        <th>
-          {{ item.amount }}
-        </th>
-        <th>
-          {{ item.price * item.amount | currency }}
-        </th>
-        <br>
-      </tr>
-      <tr>
-        <th scope="row">Total</th>
-        <th></th>
-        <th></th>
-        <th>{{ totalPrice | currency}}</th>
-      </tr>
-    </tbody>
-  </table>
-
+          </th>
+          <th scope="col">
+            Name
+          </th>
+          <th scope="col">
+            Amount
+          </th>
+          <th scope="col">
+            Price
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items, let i=index">
+          <th scope="row">{{i+1}}</th>
+          <th>
+            {{ item.name }}
+          </th>
+          <th>
+            {{ item.amount }}
+          </th>
+          <th>
+            {{ item.price * item.amount | currency }}
+          </th>
+          <br>
+        </tr>
+        <tr>
+          <th scope="row">Total</th>
+          <th></th>
+          <th></th>
+          <th>{{ totalPrice | currency}}</th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <app-generic-form></app-generic-form>
+  </div>
   <div style="text-align: center;">
   <div>
     <app-bottom-bar></app-bottom-bar>

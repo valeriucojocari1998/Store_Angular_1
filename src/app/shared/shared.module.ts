@@ -10,7 +10,7 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericFormComponent } from './components/generic-form/generic-form.component';
 
 
@@ -29,14 +29,16 @@ import { GenericFormComponent } from './components/generic-form/generic-form.com
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     TopBarComponent,
     ProductAlertsComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    BottomBarComponent
+    BottomBarComponent,
+    GenericFormComponent
   ]
 })
 export class SharedModule { }
