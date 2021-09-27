@@ -42,8 +42,11 @@
     </div>
   </div>
   <div style="text-align: center;">
-    <button *ngIf="items.length > 0" (click)="clearCart()" style="width: 50%;">
+    <button *ngIf="items.length > 0" (click)="clearCart()" style="width: 44.5%;">
       Clear Cart
+    </button>
+    <button *ngIf="items.length > 0" routerLink="/checkout" style="width: 44.5%;">
+      Buy Everything
     </button>
     <h2 *ngIf="moneyNeeded != 0">
       Total Price {{ moneyNeeded | currency }}

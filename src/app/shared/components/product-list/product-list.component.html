@@ -57,9 +57,6 @@
                 <p *ngIf="product.description">
                   Description: {{ product.description }}
                 </p>
-                <p *ngIf="product.total">
-                  Total: {{ product.total }}
-                </p>
                 <p>
                   Price: {{ product.price | currency }}
                   <button (click)="addToCart(product)" style="margin-left: 20px; width: 100px;">Buy</button>

@@ -3,7 +3,12 @@
   <button class="bar-button" routerLink="/products">Products</button>
   <button class="bar-button" routerLink="/about">About</button>
   <div class="dropdown" style="position: absolute; right: 10px;">
-    <button class="dropbtn bar-button" routerLink="/cart">Checkout</button>
+    <div class="bar-button" style="text-align: center; padding-top: 5px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16" style="margin-right: 5px;">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      Cart
+    </div>
 		<div *ngIf="items.length > 0" class="dropdown-content dropdown-menu-right dropdown-menu">
       <div *ngFor="let item of items" style="display: inline-flex; padding: 5px; width: 400px;">
         <h6 style="white-space: nowrap; margin-right: 20px;">
@@ -17,9 +22,12 @@
           <button disabled style="opacity: 100%;">{{ item.amount }}</button>
           <button (click)="add(item)">+</button>
         </div>
+        <br>
       </div>
-      <div>
+      <br>
+      <div style="margin: 5px;">
         Total: {{ totalPrice | currency }}
+        <button class="dropbtn" style="background-color: bisque; right: 0; position: absolute; margin-right: 5px;" routerLink="/cart">Check Cart</button>
       </div>
     </div>
   </div>

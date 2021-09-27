@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms';
+import { GenericFormComponent } from './components/generic-form/generic-form.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     ProductAlertsComponent,
     ProductDetailsComponent,
     BottomBarComponent,
+    GenericFormComponent,
 
   ],
   imports: [

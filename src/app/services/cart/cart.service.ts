@@ -8,7 +8,8 @@ import { CartProduct, Product } from 'src/assets/products';
 })
 
 export class CartService {
-  items: CartProduct[] = [];
+  items: CartProduct[] = [{id:1, name: 'iphone', description:'good', image: 'assets/images/iphone13pro.png', total: 13, amount: 1, price:1000}];
+  totalPrice: number = 0;
 
   constructor(
     private http: HttpClient
@@ -29,10 +30,14 @@ export class CartService {
       if (element.id === product.id && element.total > element.amount){
         element.amount++;
         state = false;
+        this.totalPrice += element.price;
       }
     });
     if (state){
       this.items.push(tmp);
+      this.totalPrice += tmp.price;
+      console.log(tmp.price);
+      console.log(this.totalPrice);
     }
   }
 
@@ -42,6 +47,7 @@ export class CartService {
 
   clearCart(){
     this.items = [];
+    this.totalPrice = 0;
     return this.items;
   }
 
@@ -49,6 +55,7 @@ export class CartService {
     this.items.forEach((element, index) => {
       if (element.id === item.id){
         element.amount -= count;
+        this.totalPrice -= element.price * count;
       }
       if (element.amount <= 0){
         this.items.splice(index, 1);
@@ -59,14 +66,11 @@ export class CartService {
     this.items.forEach((element, index) => {
       if (element.id === item.id && element.amount < element.total){
         element.amount++
+        this.totalPrice += element.price;
       }
     });
   }
   getPrice(){
-    let tmp = 0;
-    this.items.forEach(element => {
-      tmp += element.price * element.amount
-    });
-    return tmp;
+    return this.totalPrice;
   }
 }

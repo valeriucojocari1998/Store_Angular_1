@@ -13,6 +13,7 @@ export class TopBarComponent implements OnInit {
   cart: boolean = false;
   items: CartProduct[] = []
   totalPrice: number = 0;
+
   constructor(
     private cartService: CartService
   ) { }
