@@ -23,6 +23,9 @@ export class CheckoutComponent implements OnInit {
     this.items = this.cartService.getItems();
     if (this.items.length > 0) {
       this.localstorageService.set(CheckoutComponent.key, this.items);
+    } else {
+      this.items = this.localstorageService.get(CheckoutComponent.key)
+      this.cartService.items = this.items;
     }
     this.totalPrice = this.cartService.getPrice();
   }

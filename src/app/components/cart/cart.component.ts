@@ -30,14 +30,17 @@ export class CartComponent implements OnInit {
   removeOne(item: CartProduct){
     this.cartService.removeItem(item, 1);
     this.moneyNeeded = this.cartService.getPrice();
+    this.localstorageService.set(CartComponent.key, this.cartService.getItems())
   }
   removeAll(item: CartProduct){
     this.cartService.removeItem(item, item.amount);
     this.moneyNeeded = this.cartService.getPrice();
+    this.localstorageService.set(CartComponent.key, this.cartService.getItems())
   }
   addItem(item: CartProduct){
     this.cartService.addItem(item);
     this.moneyNeeded = this.cartService.getPrice();
+    this.localstorageService.set(CartComponent.key, this.cartService.getItems())
   }
   clearCart(){
     this.cartService.clearCart();
