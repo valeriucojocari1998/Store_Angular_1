@@ -14,8 +14,8 @@
 9) Checkout page, display all products from cart -- done
 10) Remove products from checkout -- done
 11) Checkout form to order the products -- done
-12) Keep products from the shopping cart in the local storage -- not done
+12) Keep products from the shopping cart in the local storage -- done
 
 
 Need to do
-12) Keep products from the shopping cart in the local storage -- not done
+All done
