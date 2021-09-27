@@ -45,7 +45,7 @@
     <button *ngIf="items.length > 0" (click)="clearCart()" style="width: 44.5%;">
       Clear Cart
     </button>
-    <button *ngIf="items.length > 0" routerLink="/checkout" style="width: 44.5%;">
+    <button *ngIf="items.length > 0" routerLink="/checkout" (click)="saveData()" style="width: 44.5%;">
       Buy Everything
     </button>
     <h2 *ngIf="moneyNeeded != 0">

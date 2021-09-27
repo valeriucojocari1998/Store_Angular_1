@@ -8,7 +8,7 @@ import { CartProduct, Product } from 'src/assets/products';
 })
 
 export class CartService {
-  items: CartProduct[] = [{id:1, name: 'iphone', description:'good', image: 'assets/images/iphone13pro.png', total: 13, amount: 1, price:1000}];
+  items: CartProduct[] = [];
   totalPrice: number = 0;
 
   constructor(

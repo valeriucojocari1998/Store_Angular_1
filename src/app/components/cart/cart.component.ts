@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { CartProduct } from 'src/assets/products';
 import { CartService } from '../../services/cart/cart.service';
 
@@ -9,13 +10,22 @@ import { CartService } from '../../services/cart/cart.service';
 })
 export class CartComponent implements OnInit {
 
+  static key = "CART-LIST";
   moneyNeeded = 0;
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private localstorageService: LocalStorageService
   ) { }
-  items = this.cartService.getItems();
+  items: CartProduct[] = [];
   ngOnInit(): void {
+    this.items = this.cartService.getItems();
     this.moneyNeeded = this.cartService.getPrice();
+    if (this.items.length > 0) {
+      this.localstorageService.set(CartComponent.key, this.items);
+    } else {
+      this.items = this.localstorageService.get(CartComponent.key)
+      this.cartService.items = this.items;
+    }
   }
   removeOne(item: CartProduct){
     this.cartService.removeItem(item, 1);
@@ -33,5 +43,9 @@ export class CartComponent implements OnInit {
     this.cartService.clearCart();
     this.items = this.cartService.getItems();
     this.moneyNeeded = this.cartService.getPrice();
+    this.localstorageService.remove(CartComponent.key);
+  }
+  saveData(){
+    this.localstorageService.set(CartComponent.key, this.items)
   }
 }
